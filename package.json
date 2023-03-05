@@ -1,0 +1,20 @@
+{
+  "name": "youtube2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.0",
+    "dotenv": "^16.0.3",
+    "get-audio-duration": "^3.1.1",
+    "pexels": "^1.4.0",
+    "say": "^0.16.0"
+  }
+}
