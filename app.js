@@ -51,9 +51,8 @@ const getPhoto = (query) => {
     const client = createClient(process.env.PEXELS_API_KEY);
 
     const photos = await client.photos.search({ query, per_page: 1 });
-    const avg_color = photos.photos[0].avg_color;
     const photo = photos.photos[0].src.landscape;
-    resolve({ photo, avg_color });
+    resolve({ photo });
   });
 };
 
