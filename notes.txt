@@ -1,0 +1,14 @@
+1. To change n to any number, you will also need to chnage merge.txt and splitVideo function
+2. File structure (All the necessary files)
+    - merge.txt
+    - bg.mp4
+    - font.ttf
+    - util
+        - music.mp3
+        - facts.txt
+        - facts.json
+3. Specification of bg.mp4
+    height: 1920p
+    width: 1080p
+4. To convert a 16:9 1080p video to a 9:16 use this command:
+    ffmpeg -i background.mp4 -filter:v "crop=ih*9/16:ih,scale=1080:1920" -c:a copy output.mp4

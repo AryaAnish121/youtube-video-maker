@@ -107,9 +107,11 @@ const generateMain = (i) => {
       [1:v]scale='min(800,iw)':min'(500,ih)':force_original_aspect_ratio=decrease,format=rgba,colorchannelmixer=aa=${
         i == 0 ? '0.0' : '1.0'
       }[fg]; \
-      [bg][fg]overlay=(W-w)/2:200[tmp]; \
+      [bg][fg]overlay=(W-w)/2:(H-h)/2 - 400[tmp]; \
       [tmp]drawtext=fontfile=./font.ttf:textfile=./sentences.txt:fontsize=72: \
-      fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2:line_spacing=35:borderw=3:bordercolor=black[v2]; \
+      fontcolor=white:x=(w-text_w)/2:y=${
+        i == 0 ? '(h-text_h)/2' : '(h-text_h)/2 + 100'
+      }:line_spacing=35:borderw=3:bordercolor=black[v2]; \
       [v2]format=yuv420p[v]`,
       '-map',
       '[v]',
@@ -342,6 +344,7 @@ const removeExtra = (n) => {
     fs.unlink(`./util/background/${i}.mp4`, () => {});
   }
   fs.unlink('./out/x.mp4', () => {});
+  fs.unlink('./out/image.jpg', () => {});
 };
 
 const main = async () => {
