@@ -1,3 +1,15 @@
+--- STEPS ---
+    
+1. First, go to chatgpt and type:
+    Generate 35 random unique facts. Also metion the object(s) in each of the facts by sperating them with a "-"
+   To get the facts
+2. After you get the facts, create facts.txt in the util folder and paste the facts.
+3. Create an empty folder called "background" in the util folder.
+4. Create an empty folder called "out"
+5. Download a vertical video, preferably a minecraft parkour video and save it as "bg.mp4"
+
+--- SPECIFICATION ---
+
 1. To change n to any number, you will also need to chnage merge.txt and splitVideo function
 2. File structure (All the necessary files)
     - merge.txt
@@ -12,5 +24,3 @@
     width: 1080p
 4. To convert a 16:9 1080p video to a 9:16 use this command:
     ffmpeg -i background.mp4 -filter:v "crop=ih*9/16:ih,scale=1080:1920" -c:a copy output.mp4
-5. To get the facts, Go to chatgpt and type:
-    Generate 35 random unique facts. Also metion the object(s) in each of the facts by sperating them with a "-"
